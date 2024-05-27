@@ -15,12 +15,12 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.username.addTextChangedListener { text ->
-            viewModel.username.value = text.toString()
-            if (!viewModel.isUsernameValid()) {
-                binding.username.error = "Username harus minimal 4 huruf"
+        binding.email.addTextChangedListener { text ->
+            viewModel.email.value = text.toString()
+            if (!viewModel.isEmailValid()) {
+                binding.email.error = "Username harus minimal 4 huruf"
             } else {
-                binding.username.error = null
+                binding.email.error = null
             }
         }
 

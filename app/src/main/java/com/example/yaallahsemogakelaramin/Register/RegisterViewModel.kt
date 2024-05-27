@@ -3,11 +3,18 @@ package com.example.yaallahsemogakelaramin.Register
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.yaallahsemogakelaramin.Repository
 
 class RegisterViewModel : ViewModel() {
     val username = MutableLiveData<String>()
     val password = MutableLiveData<String>()
     val email = MutableLiveData<String>()
+//
+//    private val repository = Repository( )
+//
+//    suspend fun register() {
+//        repository.register(username.value, email.value, password.value)
+//    }
 
     fun isUsernameValid(): Boolean {
         val usernameValue = username.value ?: return false

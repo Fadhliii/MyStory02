@@ -47,6 +47,7 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.annotation)
+    implementation(libs.common)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -79,4 +80,6 @@ dependencies {
     implementation("io.coil-kt:coil:1.4.0")
     //coil image
     implementation("io.coil-kt:coil:1.4.0")
+    //data store
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
 }
