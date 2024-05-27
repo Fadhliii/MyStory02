@@ -1,4 +1,4 @@
-package com.example.yaallahsemogakelaramin.Register
+package com.example.yaallahsemogakelaramin.register
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -16,11 +16,16 @@ class RegisterActivity : AppCompatActivity() {
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.btnRegister.setOnClickListener{
+            setupRegister()
+        }
+
         binding.username.addTextChangedListener {
+            val missingChars =viewModel.isEmailValid()
             val text = it.toString()
             viewModel.username.value = text.toString()
             if (!viewModel.isUsernameValid()) {
-                binding.username.error = "Username harus lebih dari 4 kata"
+                binding.username.error = "Username harus lebih dari $missingChars karakter"
             }
             else {
                 binding.username.error = null
@@ -43,13 +48,22 @@ class RegisterActivity : AppCompatActivity() {
             }
         }
         binding.password.addTextChangedListener { text ->
+            val missingPassword = viewModel.isPasswordValid()
             viewModel.password.value = text.toString()
             if (!viewModel.isPasswordValid()) {
-                binding.password.error = "Password harus lebih dari 3 kata"
+                binding.password.error = "Password harus lebih dari $missingPassword kata"
             } else {
                 binding.password.error = null
             }
         }
+    }
+
+    private fun setupRegister() {
+        // set register
+        val name = binding.username.text.toString()
+        val email = binding.email.text.toString()
+        val password = binding.password.text.toString() //
+
     }
 
 }

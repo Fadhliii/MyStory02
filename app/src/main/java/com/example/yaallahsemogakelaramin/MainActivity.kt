@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.yaallahsemogakelaramin.Login.LoginActivity
-import com.example.yaallahsemogakelaramin.Register.RegisterActivity
+import com.example.yaallahsemogakelaramin.register.RegisterActivity
 import com.example.yaallahsemogakelaramin.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
